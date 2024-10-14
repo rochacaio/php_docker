@@ -21,7 +21,7 @@ class PersonagensService
                 $string_links .= "<li> <a href='" . $links . "'> Link filme " . $i . " </a></li><br>";
             }
             $string_links .= '</ol>';
-            $item->filmesString = str_replace('"', '', $string_links);
+            $item->filmesString = $string_links;
         }
             return $dados;
     }
