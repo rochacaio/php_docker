@@ -1,24 +1,13 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+require 'Services/PersonagensService.php';
 // URL da API externa
-$apiUrl = "https://swapi.dev/api/people/";
-
-// Função para buscar dados da API
-function fetchDataFromAPI($url) {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    $response = curl_exec($ch);
-    curl_close($ch);
-
-    // Retorna os dados em formato de array
-    return json_decode($response);
-}
 
 // Busca os dados
-$data = fetchDataFromAPI($apiUrl);
+$personagens = new PersonagensService("https://swapi.dev/api/people/");
+
+$data = $personagens->getPersonagensLista();
 
 // Exibição dos dados em uma tabela
 if (!empty($data)) {
