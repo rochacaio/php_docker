@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página de controle de Personagens">
-    <meta name="author" content="Seu Nome">
+    <meta name="author" content="Caio Rocha">
     <title>Lista de Personagens</title>
 </head>
 <body>
