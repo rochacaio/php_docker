@@ -7,7 +7,6 @@ class PersonagensService
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $localDados);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $response = curl_exec($ch);
         curl_close($ch);
 
@@ -18,7 +17,7 @@ class PersonagensService
             $string_links = '<ol></ol>';
             foreach ($item->films as $i => $links) {
                 $i++;
-                $string_links .= "<li> <a href='" . $links . "'> Link filme " . $i . " </a></li><br>";
+                $string_links .= "<li> <a href='" . $links . "'> Link filme " . $i . " </a></li>";
             }
             $string_links .= '</ol>';
             $item->filmesString = $string_links;
